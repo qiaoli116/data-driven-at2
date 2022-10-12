@@ -7,6 +7,26 @@ using System.Threading.Tasks;
 
 namespace HolmesglenStudentManagementSystem.DataAccessLayer
 {
+    public class AppDAL
+    {
+        public SqliteConnection Connection;
+        public StudentDAL StudentDALInstance;
+        public SubjectDAL SubjectDALInstance;
+        public EnrollmentDAL EnrollmentDALInstance;
+
+        // private constructor
+        public AppDAL() {
+            // create the ADO.net sqlite connection
+            Connection = new SqliteConnection(HolmesglenDB.ConnectionString);
+
+            // create all DAL instances
+            StudentDALInstance = new StudentDAL(Connection);
+            SubjectDALInstance = new SubjectDAL(Connection);
+            // student todo:
+            // implement the EnrollmentDAL class and create a instance here 
+        }
+    }
+    /* sigular pattern
     sealed public class AppDAL
     {
         private static AppDAL DALInstance = null;
@@ -38,4 +58,5 @@ namespace HolmesglenStudentManagementSystem.DataAccessLayer
             SubjectDALInstance = new SubjectDAL(Connection);
         }
     }
+    */
 }

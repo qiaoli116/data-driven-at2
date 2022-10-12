@@ -10,15 +10,19 @@ namespace HolmesglenStudentManagementSystem.BusinessLogicLayer
 {
     public class StudentBLL
     {
-
+        AppDAL appDAL;
+        public StudentBLL()
+        {
+            appDAL = new AppDAL();
+        }
         public List<Student> GetAll()
         {
-            return AppDAL.Instance().StudentDALInstance.ReadAll();
+            return appDAL.StudentDALInstance.ReadAll();
         }
 
         public Student GetOne(string id)
         {
-            return AppDAL.Instance().StudentDALInstance.Read(id);
+            return appDAL.StudentDALInstance.Read(id);
         }
 
         public bool Create(Student student)
@@ -31,7 +35,7 @@ namespace HolmesglenStudentManagementSystem.BusinessLogicLayer
             else
             {
                 // if student id does not exist, create it
-                AppDAL.Instance().StudentDALInstance.Create(student);
+                appDAL.StudentDALInstance.Create(student);
             }
 
             return true;
@@ -47,7 +51,7 @@ namespace HolmesglenStudentManagementSystem.BusinessLogicLayer
             else
             {
                 // if student id exists, update it
-                AppDAL.Instance().StudentDALInstance.Update(student);
+                appDAL.StudentDALInstance.Update(student);
             }
 
             return true;
@@ -63,7 +67,7 @@ namespace HolmesglenStudentManagementSystem.BusinessLogicLayer
             else
             {
                 // if student id exists, delete it
-                AppDAL.Instance().StudentDALInstance.Delete(id);
+                appDAL.StudentDALInstance.Delete(id);
             }
 
             return true;

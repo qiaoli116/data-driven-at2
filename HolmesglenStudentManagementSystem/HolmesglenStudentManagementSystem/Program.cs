@@ -10,6 +10,7 @@ namespace HolmesglenStudentManagementSystem
         static void Main(string[] args)
         {
             (new GetAllStudents()).Run();
+            // uncomment the code below for testing
             //(new GetOneStudent()).Run();
             //(new CreateStudent()).Run();
             //(new UpdateStudent()).Run();
