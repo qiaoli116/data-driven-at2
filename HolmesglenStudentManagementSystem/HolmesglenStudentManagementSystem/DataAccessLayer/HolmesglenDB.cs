@@ -3,7 +3,8 @@ namespace HolmesglenStudentManagementSystem.DataAccessLayer
 {
     public class HolmesglenDB
     {
-        // define the connection string for the target database
-        public static string ConnectionString = @"Data Source=D:\tmp\HolmesglenStudentManagementSystem.db";
+        // student todo -
+        // correctly define the connection string for the target database
+        public static string ConnectionString = @"Data Source=C:\HolmesglenStudentManagementSystem.db";
     }
 }
