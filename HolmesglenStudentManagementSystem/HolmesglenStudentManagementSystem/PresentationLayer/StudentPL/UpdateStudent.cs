@@ -28,11 +28,11 @@ namespace HolmesglenStudentManagementSystem.PresentationLayer.StudentPL
 
             if (result == false)
             {
-                Console.WriteLine($"Create new student unsuccessful");
+                Console.WriteLine($"Update student unsuccessful");
             }
             else
             {
-                Console.WriteLine($"Create new student successful");
+                Console.WriteLine($"Update student successful");
             }
         }
     }
